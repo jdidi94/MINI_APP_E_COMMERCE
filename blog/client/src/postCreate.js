@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 function Post() {
   const [Title, setTitle] = useState("");
-  const onSubmit = async (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    await axios.post("localhost:4000/posts", { title: Title });
-    setTitle("");
+    axios
+      .post("http://localhost:4000/posts", { title: Title })
+      .then(() => setTitle(""));
   };
   return (
     <div>
