@@ -7,7 +7,7 @@ function Comment({ postId }) {
   const onSubmit = (event) => {
     event.preventDefault();
     axios
-      .post(`http://localhost:4001/posts/${postId}/comments`, {
+      .post(`http://posts.com/posts/${postId}/comments`, {
         content: content,
       })
       .then(() => setContent(""));

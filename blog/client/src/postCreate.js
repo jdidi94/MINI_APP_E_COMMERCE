@@ -5,14 +5,17 @@ function Post() {
   const onSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:4000/posts", { title: Title })
-      .then(() => setTitle(""));
+      .post("http://posts.com/posts/create", { title: Title })
+      .then(() => setTitle(""))
+      .catch((e) => {
+        console.log(e);
+      });
   };
   return (
     <div>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label>Title</label>
+          <label>Titles check</label>
           <input
             value={Title}
             type="text"
